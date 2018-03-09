@@ -37,6 +37,8 @@ const User = db.define('users', {
   }
 });
 
+Page.belongsTo(User, { as: 'author' });
+
 db.authenticate()
 .then(() => {
   console.log('connected to the database');
